@@ -7,95 +7,87 @@
     <link rel="stylesheet" href="../styles/style.css">
 </head>
 <body>
-    <form id="birthCertForm" method="POST" action="/submit-birth-cert-form">
+    <form id="birthCertForm" method="POST" action="process.php">
         <h1>Request Form</h1>
-        <!--
-        FIRST SECTION:
-        BASIC PERSONAL DATA OF THE RECIPIENT
-        -->
+        <!-- FIRST SECTION: BASIC PERSONAL DATA OF THE RECIPIENT -->
         <div class="tab">
             <h2>Certificate Holder's Details</h2>
             <p>This section is for the owner of the certificate.</p>
-            <!--LAST NAME FIELD-->
+    
+            <!-- LAST NAME FIELD -->
             <label for="lastName">Last Name:</label><br>
-            <input type="text" id="lastName" required><br><br>
-
-            <!--FIRST NAME FIELD-->
+            <input type="text" id="lastName" name="lastName" required><br><br>
+    
+            <!-- FIRST NAME FIELD -->
             <label for="firstName">First Name:</label><br>
-            <input type="text" id="firstName" required><br><br>
-
-            <!--MIDDLE NAME FIELD-->
+            <input type="text" id="firstName" name="firstName" required><br><br>
+    
+            <!-- MIDDLE NAME FIELD -->
             <label for="middleName">Middle Name:</label><br>
-            <input type="text" id="middleName" value="(optional)"><br><br>
-
-            <!--SUFFIX FIELD-->
+            <input type="text" id="middleName" name="middleName" value="(optional)"><br><br>
+    
+            <!-- SUFFIX FIELD -->
             <label for="suffix">Suffix:</label><br>
-            <input type="text" id="suffix" value="(optional)"><br><br>
-
-            <!--SEX RADIO BUTTON-->
+            <input type="text" id="suffix" name="suffix" value="(optional)"><br><br>
+    
+            <!-- SEX RADIO BUTTON -->
             <label for="sex">Sex:</label><br>
             <input type="radio" id="male" name="sex" value="Male" required>
             <label for="male">Male</label><br>
-            <input type="radio" id="male" name="sex" value="Male">
-            <label for="Female">Female</label><br><br>
-
-            <!--BIRTHDAY FIELD-->
+            <input type="radio" id="female" name="sex" value="Female" required>
+            <label for="female">Female</label><br><br>
+    
+            <!-- BIRTHDAY FIELD -->
             <label for="birthday">Birthday:</label>
-            <input type="date" id="birthday" name="birthday" required /> 
+            <input type="date" id="birthday" name="birthday" required><br><br>
         </div>
-
-        <!--
-        SECOND SECTION:
-        MORE BASIC PERSONAL DATA
-        -->
+    
+        <!-- SECOND SECTION: FATHER'S AND MOTHER'S DETAILS -->
         <div class="tab">
-            <h2>Certificate Holder's Details</h2>
-            <p>This section is for the owner of the certificate.</p>
-
-            <!--FATHER'S LAST NAME FIELD-->
+            <h2>Parent's Details</h2>
+            <p>Details of the certificate holder's parents.</p>
+    
+            <!-- FATHER'S LAST NAME FIELD -->
             <label for="fatherLastName">Father's Last Name:</label><br>
-            <input type="text" id="fatherLastName" required><br><br>
-
-            <!--FATHER'S FIRST NAME FIELD-->
+            <input type="text" id="fatherLastName" name="fatherLastName" required><br><br>
+    
+            <!-- FATHER'S FIRST NAME FIELD -->
             <label for="fatherFirstName">Father's First Name:</label><br>
-            <input type="text" id="fatherFirstName" required><br><br>
-
-            <!--FATHER'S MIDDLE NAME FIELD-->
+            <input type="text" id="fatherFirstName" name="fatherFirstName" required><br><br>
+    
+            <!-- FATHER'S MIDDLE NAME FIELD -->
             <label for="fatherMiddleName">Father's Middle Name:</label><br>
-            <input type="text" id="fatherMiddleName" value="(optional)"><br><br>
-            
-            <!--SUFFIX FIELD-->
+            <input type="text" id="fatherMiddleName" name="fatherMiddleName" value="(optional)"><br><br>
+    
+            <!-- FATHER'S SUFFIX FIELD -->
             <label for="fatherSuffix">Suffix:</label><br>
-            <input type="text" id="fatherSuffix"><br><br>
-
-            <!--MOTHERS'S MAIDEN LAST NAME FIELD-->
+            <input type="text" id="fatherSuffix" name="fatherSuffix"><br><br>
+    
+            <!-- MOTHER'S MAIDEN LAST NAME FIELD -->
             <label for="motherLastName">Mother's Maiden Last Name:</label><br>
-            <input type="text" id="motherLastName" required><br><br>
-
-            <!--MOTHERS'S MAIDEN FIRST NAME FIELD-->
+            <input type="text" id="motherLastName" name="motherLastName" required><br><br>
+    
+            <!-- MOTHER'S MAIDEN FIRST NAME FIELD -->
             <label for="motherFirstName">Mother's Maiden First Name:</label><br>
-            <input type="text" id="motherFirstName" required><br><br>
-
-            <!--MOTHERS'S MAIDEN MIDDLE NAME FIELD (OPTIONAL)-->
+            <input type="text" id="motherFirstName" name="motherFirstName" required><br><br>
+    
+            <!-- MOTHER'S MAIDEN MIDDLE NAME FIELD -->
             <label for="motherMiddleName">Mother's Maiden Middle Name:</label><br>
-            <input type="text" id="motherMiddleName" ><br><br>
-
-            <!--PLACE OF BIRTH-->
+            <input type="text" id="motherMiddleName" name="motherMiddleName"><br><br>
+    
+            <!-- PLACE OF BIRTH -->
             <label for="birthPlace">Place of Birth:</label><br>
-            <input type="text" id="birthPlace" ><br><br>
+            <input type="text" id="birthPlace" name="birthPlace"><br><br>
         </div>
-
-        <!--
-        THIRD SECTION:
-        REQUESTER'S DETAILS AND DELIVERY INFORMATION
-        -->
+    
+        <!-- THIRD SECTION: REQUESTER'S DETAILS -->
         <div class="tab">
             <h2>Requester's Details</h2>
-            <p>This section is for the requester of the certificate.</p>
-
-            <!--REQUESTER RELATIONSHIP SELECTION-->
-            <label for="reqRelationship">Your relationship with the owner of certificate:</label><br>
-            <select id="reqRelationship" required>
+            <p>Details of the requester of the certificate.</p>
+    
+            <!-- REQUESTER RELATIONSHIP SELECTION -->
+            <label for="reqRelationship">Your relationship with the owner of the certificate:</label><br>
+            <select id="reqRelationship" name="reqRelationship" required>
                 <option value="self">Self</option>
                 <option value="father">My Father</option>
                 <option value="mother">My Mother</option>
@@ -104,36 +96,32 @@
                 <option value="son">My Son</option>
                 <option value="daughter">My Daughter</option>
             </select><br><br>
-
-            <!--REQUESTER LAST NAME FIELD-->
+    
+            <!-- REQUESTER LAST NAME FIELD -->
             <label for="reqLastName">Last Name:</label><br>
-            <input type="text" id="reqLastName" required><br><br>
-
-            <!--REQUESTER FIRST NAME FIELD-->
+            <input type="text" id="reqLastName" name="reqLastName" required><br><br>
+    
+            <!-- REQUESTER FIRST NAME FIELD -->
             <label for="reqFirstName">First Name:</label><br>
-            <input type="text" id="reqFirstName" required><br><br>
-
-            <!--REQUESTER MIDDLE NAME FIELD-->
+            <input type="text" id="reqFirstName" name="reqFirstName" required><br><br>
+    
+            <!-- REQUESTER MIDDLE NAME FIELD -->
             <label for="reqMiddleName">Middle Name:</label><br>
-            <input type="text" id="reqMiddleName" required><br><br>
-
+            <input type="text" id="reqMiddleName" name="reqMiddleName"><br><br>
         </div>
-
-        <!--
-        FOURTH SECTION:
-        REQUEST DETAILS AND PRICELIST
-        -->
+    
+        <!-- FOURTH SECTION: REQUEST DETAILS -->
         <div class="tab">
             <h2>Birth Certificate</h2>
-            <image src="../assets/draftpricelist.png" height="200px"><br>
-
-            <!--NUMBER OF COPIES-->
+            <img src="../assets/draftpricelist.png" height="200px"><br>
+    
+            <!-- NUMBER OF COPIES -->
             <label for="copies">Number of Copies:</label><br>
-            <input type="number" min="1" id="copies" required /><br><br>
-
-            <!--PURPOSE OF REQUEST-->
-            <label for="reqPurpose">Purpose of Request</label><br>
-            <select id="reqPurpose" required>
+            <input type="number" min="1" id="copies" name="copies" required><br><br>
+    
+            <!-- PURPOSE OF REQUEST -->
+            <label for="reqPurpose">Purpose of Request:</label><br>
+            <select id="reqPurpose" name="reqPurpose" required>
                 <option value="passport">Passport</option>
                 <option value="schoolRequirement">School Requirement</option>
                 <option value="localEmployment">Local Employment</option>
@@ -144,27 +132,26 @@
                 <option value="others">Others</option>
             </select><br><br>
         </div>
-
-        <!--
-        NEXT AND PREVIOUS BUTTON
-        STEPS INDICATOR
-        -->
+    
+        <!-- NEXT AND PREVIOUS BUTTONS -->
         <br><br>
         <div style="overflow:auto;">
             <div style="float:right;">
-              <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-              <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                <button type="submit" id="submit" style="display: none;">Submit</button>
             </div>
-          </div>
-          
-          <!-- Circles which indicates the steps of the form: -->
-          <div style="text-align:center;margin-top:40px;">
+        </div>
+    
+        <!-- STEPS INDICATOR -->
+        <div style="text-align:center; margin-top:40px;">
             <span class="step"></span>
             <span class="step"></span>
             <span class="step"></span>
             <span class="step"></span>
-          </div>
+        </div>
     </form>
+    
 
     <script src="../scripts/main.js"></script>
 </body>
