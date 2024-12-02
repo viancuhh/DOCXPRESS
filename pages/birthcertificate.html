@@ -3,19 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DocXpress - Order Form</title>
+    <title>DocXpress</title>
     <link rel="stylesheet" href="../styles/style.css">
 </head>
 <body>
-    <div class="topnav">
-        <h1 class="title">DocXpress</h1>
-        <a class="active" href="../index.html">Home</a>
-        <a href="./contact.html">Contact</a>
-        <a href=".about.html">About</a>
-        <a href="./tracker.html">
-            <button>Track your request now!</button>
-        </a>
-    </div>
+    <header>
+        <nav class="navbar">
+            <h1 id="navtitle">DocXpress</h1>
+            <ul>
+                <li><a class="navoptions" class="active" href="../index.html">Home</a></li>
+                <li><a class="navoptions" href="./contact.html">Contact</a></li>
+                <li><a class="navoptions" href=".about.html">About</a></li>
+                <li><a class="navoptions" href="./tracker.html">
+                    <button>Track your request now!</button>
+                </a></li>
+            </ul>
+        </nav>
+    </header>
+
     <form id="birthCertForm" method="POST" action="process.php">
         <h1>Request Form</h1>
         <!-- FIRST SECTION: BASIC PERSONAL DATA OF THE RECIPIENT -->
@@ -160,8 +165,27 @@
             <span class="step"></span>
         </div>
     </form>
-    
 
     <script src="../scripts/main.js"></script>
+    <footer class="footer">
+        <div class="footercontainer">
+            <div class="footerrow">
+                <div class="footer-col">
+                    <h4>Team DocXpress</h4>
+                    <ul>
+                        <li><a href="#">about us</a></li>
+                        <li><a href="#">privacy policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <br>
+                    <h4>get help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+   </footer>
 </body>
 </html>
