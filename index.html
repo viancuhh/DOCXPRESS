@@ -3,27 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DocXpress - Home Page</title>
+    <title>DocXpress</title>
     <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
-    <div class="topnav">
-        <h1 class="title">DocXpress</h1>
-        <a class="active" href="./index.html">Home</a>
-        <a href="./pages/contact.html">Contact</a>
-        <a href="./pages/about.html">About</a>
-        <a href="./pages/tracker.html">
-            <button>Track your request now!</button>
-        </a>
-    </div>
-    <hr>
+    <header>
+        <nav class="navbar">
+            <h1 id="navtitle">DocXpress</h1>
+            <ul>
+                <li><a class="navoptions" class="active" href="../index.html">Home</a></li>
+                <li><a class="navoptions" href="./contact.html">Contact</a></li>
+                <li><a class="navoptions" href=".about.html">About</a></li>
+                <li><a class="navoptions" href="./tracker.html">
+                    <button>Track your request now!</button>
+                </a></li>
+            </ul>
+        </nav>
+    </header>
+    
     <div class="container">
         <h2>Welcome to DocXpress!</h2>
-        <h3>Get your own copy of Government Certificates here</h3>
+        
         <div class="certContainer">
-            <h2>Certificates</h2>
+            
             
                 <form id="certificateForm" action="">
+                    <h2>Government Certificates</h2>
+                    <h3>Get your own copy of Government Certificates here</h3>
                     <!--CERTIFICATE TYPE-->
                     <label for="certificateType">Choose Certificate Type:</label><br>
                     <select id="certificateType" required>
@@ -32,16 +38,33 @@
                         <option value="marriage">Marriage Certificate</option>
                         <option value="cenomar">CENOMAR</option>
                      </select><br><br>
+                     <button id="orderNowBtn" type="button">Order Now</button>
+                     <a href="./pages/birthcertificate"><button>temporary next button</button></a>
                 </form>
             
         </div>
-        <button id="orderNowBtn" type="button">Order Now</button>
-        <a href="./pages/birthcertificate"><button>temporary next button</button></a>
+        
+        
     </div>
-    
+    <footer class="footer">
+        <div class="footercontainer">
+            <div class="footerrow">
+                <div class="footer-col">
+                    <h4>Team DocXpress</h4>
+                    <ul>
+                        <li><a href="#">about us</a></li>
+                        <li><a href="#">privacy policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <br>
+                    <h4>get help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+   </footer>
 </body>
-<footer>
-    <hr>
-    PRIVACY STUFF
-</footer>
 </html>
