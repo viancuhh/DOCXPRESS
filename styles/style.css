@@ -1,5 +1,16 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+:root {
+  --primary: rgb(9, 47, 65);
+  --color2: #30819a;
+  --color3: #a1c2d2;
+}
+
+
+/* FOR MULTI-SECTION FORMS */
 /* Style the form */
-#birthCertForm {
+form {
     background-color: #ffffff;
     margin: 100px auto;
     padding: 40px;
@@ -13,7 +24,7 @@
     width: 100%;
     font-size: 17px;
     font-family: Raleway;
-    border: 1px solid #aaaaaa;
+    border: 1px solid var(--color3);
   }
   
   /* Mark input boxes that gets an error on validation: */
@@ -31,7 +42,7 @@
     height: 15px;
     width: 15px;
     margin: 0 2px;
-    background-color: #bbbbbb;
+    background-color: var(--color3);
     border: none;
     border-radius: 50%;
     display: inline-block;
@@ -45,5 +56,122 @@
   
   /* Mark the steps that are finished and valid: */
   .step.finish {
-    background-color: #5480df;
+    background-color: var(--color2);
   }
+
+
+/*UNIVERSAL STYLING*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lexend", serif;;
+  color: var(--primary)
+}
+
+body {
+  min-height: 100vh;
+  background-image: url(../assets/docxpress\ bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position-x: center;
+  background-position-y: center;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 16px 32px;
+}
+
+.navbar > ul {
+  display: flex;
+  list-style-type: none;
+  gap: 40px;
+}
+
+#navtitle{
+  font-size: 40px;
+  text-decoration: none;
+}
+
+#logo:hover {
+  cursor: pointer;
+}
+
+.navoptions {
+  font-weight: bold;
+  text-decoration-color: transparent;
+  text-underline-offset: 8px;
+  transition-property: text-decoration-color;
+  transition-duration: 1s;
+}
+
+.navoptions:hover {
+  text-decoration-color: var(--primary);
+  transition-property: text-decoration-color;
+  transition-duration: 1s;
+}
+
+.footer {
+	background-color: var(--primary);
+  padding: 70px 0;
+}
+
+.footer-col {
+  width: 25%;
+  padding: 0 15px;
+}
+
+.footer-col h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: var(--color2);
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: var(--color3);
+	display: block;
+	transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+	color: #ffffff;
+	padding-left: 8px;
+}
+
+.footercontainer {
+  display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
