@@ -12,7 +12,7 @@
 /* Style the form */
 form {
     background-color: #ffffff;
-    margin: 100px auto;
+    margin: 0100px auto;
     padding: 40px;
     width: 70%;
     min-width: 300px;
@@ -91,6 +91,8 @@ body {
 }
 
 .navbar > ul {
+  margin-top: 20px;
+  font-size: 21px;
   display: flex;
   list-style-type: none;
   gap: 40px;
@@ -104,6 +106,7 @@ body {
 #logo:hover {
   cursor: pointer;
 }
+
 
 .navoptions {
   font-weight: bold;
@@ -175,3 +178,37 @@ body {
     min-height: 100vh;
 }
 
+button{
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+  border-radius: 500px;
+  transition-property: background-color,border-color,color,box-shadow,filter;
+  transition-duration: .3s;
+  border: 1px solid transparent;
+  letter-spacing: 2px;
+  min-width: 160px;
+  text-transform: uppercase;
+  white-space: normal;
+  font-weight: 700;
+  text-align: center;
+  padding: 15px 10px 25px 15PX;
+  color: var(--primary);
+  box-shadow: inset 0 0 0 2px var(--primary);
+  background-color: transparent;
+  height: 30px;
+}
+
+button:hover{
+    color: #fff;
+    background-color: var(--color2);
+}
+
+.elementcontainer{
+  margin-left: 5%;
+}
+.elementcontainer > h2 {
+  font-size: 60px;
+}
