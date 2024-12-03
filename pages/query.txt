@@ -5,7 +5,7 @@ CREATE TABLE certholders (
     middle_name VARCHAR(50),
     suffix VARCHAR(50),
     sex VARCHAR(50),
-    birthday DATE,
+    birthday VARCHAR(50),
     father_last_name VARCHAR(50), 
     father_first_name VARCHAR(50), 
     father_middle_name VARCHAR(50), 
@@ -23,4 +23,46 @@ CREATE TABLE requesters(
     middle_name VARCHAR(50), 
     copies INT, 
     purpose VARCHAR(50)
+);
+CREATE TABLE dcertholders (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    last_name VARCHAR(50), 
+    first_name VARCHAR(50), 
+    middle_name VARCHAR(50), 
+    suffix VARCHAR(50), 
+    sex VARCHAR(50), 
+    birthday VARCHAR(50), 
+    death_date VARCHAR(50), 
+    death_place VARCHAR(50)
+);
+CREATE TABLE mcertholders (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    last_name VARCHAR(50), 
+    first_name VARCHAR(50), 
+    middle_name VARCHAR(50), 
+    suffix VARCHAR(50), 
+    sex VARCHAR(50), 
+    birthday VARCHAR(50),
+	husband_last_name VARCHAR(50),
+    husband_first_name VARCHAR(50),
+    husband_middle_name VARCHAR(50),
+    marriage_date VARCHAR(50),
+    marriage_place VARCHAR(50)
+);
+CREATE TABLE nmcertholders (
+    id INT AUTO_INCREMENT PRIMARY KEY, 
+	last_name VARCHAR(50), 
+    first_name VARCHAR(50), 
+    middle_name VARCHAR(50), 
+    suffix VARCHAR(50), 
+    sex VARCHAR(50), 
+    birthday VARCHAR(50), 
+    father_last_name VARCHAR(50), 
+    father_first_name VARCHAR(50), 
+    father_middle_name VARCHAR(50), 
+    father_suffix VARCHAR(50), 
+    mother_last_name VARCHAR(50), 
+    mother_first_name VARCHAR(50), 
+    mother_middle_name VARCHAR(50), 
+    birth_place VARCHAR(50)
 );
