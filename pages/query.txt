@@ -1,0 +1,26 @@
+CREATE TABLE certholders (
+    id  INT AUTO_INCREMENT PRIMARY KEY,
+    last_name VARCHAR(50),
+    first_name 	VARCHAR(50),
+    middle_name VARCHAR(50),
+    suffix VARCHAR(50),
+    sex VARCHAR(50),
+    birthday DATE,
+    father_last_name VARCHAR(50), 
+    father_first_name VARCHAR(50), 
+    father_middle_name VARCHAR(50), 
+    father_suffix VARCHAR(50), 
+    mother_last_name VARCHAR(50), 
+    mother_first_name VARCHAR(50), 
+    mother_middle_name VARCHAR(50),
+    birthplace VARCHAR(50)
+);
+CREATE TABLE requesters(
+    requester_id INT AUTO_INCREMENT PRIMARY KEY,
+    relationship VARCHAR(50), 
+    last_name VARCHAR(50), 
+    first_name VARCHAR(50), 
+    middle_name VARCHAR(50), 
+    copies INT, 
+    purpose VARCHAR(50)
+);
