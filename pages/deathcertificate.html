@@ -20,15 +20,15 @@
             </ul>
         </nav>
     </header>
-    <form id="deathCertForm" method="POST" action="process_deathcert.php">
-        <h1>Death Certificate Request Form</h1>
+    <form id="cenomarForm" method="POST" action="process_cenomar.php">
+        <h1>CENOMAR Request Form</h1>
         <!--
         FIRST SECTION:
         BASIC PERSONAL DATA OF THE RECIPIENT
         -->
         <div class="tab">
-            <h2>Deceased's Details</h2>
-            <p>This section is for the information of the deceased.</p><br>
+            <h2>Certificate Holder's Details</h2>
+            <p>This section is for the owner of the certificate.</p>
 
             <!-- LAST NAME FIELD -->
             <label for="lastName">Last Name:</label><br>
@@ -45,8 +45,8 @@
             <!-- SUFFIX FIELD -->
             <label for="suffix">Suffix:</label><br>
             <input type="text" id="suffix" name="suffix" value="(optional)"><br><br>
-    
-            <!-- SEX RADIO BUTTON -->
+
+            <!--SEX RADIO BUTTON-->
             <div class="radiobtn">
                 <label for="sex">Sex:</label><br>
                 <label for="male">
@@ -61,24 +61,48 @@
             <!-- BIRTHDAY FIELD -->
             <label for="birthday">Birthday:</label>
             <input type="date" id="birthday" name="birthday" required><br><br>
-            </div>
         </div>
 
         <!--
         SECOND SECTION:
-        DEATH INFORMATION
+        MORE BASIC PERSONAL DATA
         -->
         <div class="tab">
-            <!--DATE OF DEATH-->
-            <label for="deathDate">Date of Death:</label><br>
-            <input type="date" id="deathDate" name="deathDate" required /><br><br>
+            <h2>Certificate Holder's Details</h2>
+            <p>This section is for the owner of the certificate.</p>
 
-            <!--PLACE OF DEATH-->
-            <label for="deathPlace">Place of Death:</label><br>
-            <input type="text" id="deathPlace" name="deathPlace" required /><br><br>
-
+            <!-- FATHER'S LAST NAME FIELD -->
+            <label for="fatherLastName">Father's Last Name:</label><br>
+            <input type="text" id="fatherLastName" name="fatherLastName" required><br><br>
+    
+            <!-- FATHER'S FIRST NAME FIELD -->
+            <label for="fatherFirstName">Father's First Name:</label><br>
+            <input type="text" id="fatherFirstName" name="fatherFirstName" required><br><br>
+    
+            <!-- FATHER'S MIDDLE NAME FIELD -->
+            <label for="fatherMiddleName">Father's Middle Name:</label><br>
+            <input type="text" id="fatherMiddleName" name="fatherMiddleName" value="(optional)"><br><br>
+    
+            <!-- FATHER'S SUFFIX FIELD -->
+            <label for="fatherSuffix">Suffix:</label><br>
+            <input type="text" id="fatherSuffix" name="fatherSuffix" value="(optional)"><br><br>
+    
+            <!-- MOTHER'S MAIDEN LAST NAME FIELD -->
+            <label for="motherLastName">Mother's Maiden Last Name:</label><br>
+            <input type="text" id="motherLastName" name="motherLastName" required><br><br>
+    
+            <!-- MOTHER'S MAIDEN FIRST NAME FIELD -->
+            <label for="motherFirstName">Mother's Maiden First Name:</label><br>
+            <input type="text" id="motherFirstName" name="motherFirstName" required><br><br>
+    
+            <!-- MOTHER'S MAIDEN MIDDLE NAME FIELD -->
+            <label for="motherMiddleName">Mother's Maiden Middle Name:</label><br>
+            <input type="text" id="motherMiddleName" name="motherMiddleName" required><br><br>
+    
+            <!-- PLACE OF BIRTH -->
+            <label for="birthPlace">Place of Birth:</label><br>
+            <input type="text" id="birthPlace" name="birthPlace" required><br><br>
         </div>
-
         <!--
         THIRD SECTION:
         REQUESTER'S DETAILS AND DELIVERY INFORMATION
@@ -109,25 +133,24 @@
     
             <!-- REQUESTER MIDDLE NAME FIELD -->
             <label for="reqMiddleName">Middle Name:</label><br>
-            <input type="text" id="reqMiddleName" name="reqMiddleName"><br><br>
-
+            <input type="text" id="reqMiddleName" name="reqMiddleName" value="(optional)"><br><br>
         </div>
-        
+
         <!--
         FOURTH SECTION:
         REQUEST DETAILS
         -->
         <div class="tab">
-            <h2>Death Certificate</h2>
+            <h2>Certificate of Non-Marriage (CENOMAR)</h2>
             <image src="../assets/draftpricelist.png" height="200px"><br>
 
-            <!-- NUMBER OF COPIES -->
+            <!--NUMBER OF COPIES-->
             <label for="copies">Number of Copies:</label><br>
-            <input type="number" min="1" id="copies" name="copies" required><br><br>
-    
-            <!-- PURPOSE OF REQUEST -->
-            <label for="reqPurpose">Purpose of Request:</label><br>
-            <select id="reqPurpose" name="reqPurpose" required>
+            <input type="number" min="1" id="copies" required /><br><br>
+        
+            <!--PURPOSE OF REQUEST (IIBAHIN TO)-->
+            <label for="reqPurpose">Purpose of Request</label>
+            <select id="reqPurpose" required>
                 <option value="Passport">Passport</option>
                 <option value="School Requirement">School Requirement</option>
                 <option value="Local Employment">Local Employment</option>
@@ -138,7 +161,7 @@
                 <option value="Others">Others</option>
             </select><br><br>
         </div>
- 
+
         <!--
         NEXT AND PREVIOUS BUTTON
         STEPS INDICATOR
@@ -149,6 +172,7 @@
               <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
               <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
               <button type="submit" id="submit" style="display: none;">Submit</button>
+
             </div>
           </div>
           
@@ -162,21 +186,14 @@
     </form>
 
     <script src="../scripts/main.js"></script>
+    
     <footer class="footer">
         <div class="footercontainer">
             <div class="footerrow">
                 <div class="footer-col">
                     <h4>Team DocXpress</h4>
                     <ul>
-                        <li><a href="#">about us</a></li>
-                        <li><a href="#">privacy policy</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <br>
-                    <h4>get help</h4>
-                    <ul>
-                        <li><a href="#">FAQ</a></li>
+                        <li><a href="./privacypolicy.html">privacy policy</a></li>
                     </ul>
                 </div>
             </div>
