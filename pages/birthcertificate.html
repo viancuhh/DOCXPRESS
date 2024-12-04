@@ -12,7 +12,7 @@
             <h1 id="navtitle">DocXpress</h1>
             <ul>
                 <li><a class="navoptions" class="active" href="../index.html">Home</a></li>
-                <li><a class="navoptions" href="./contact.html">Contact</a></li>
+                <li><a class="navoptions" href="./admin.html">Admin</a></li>
                 <li><a class="navoptions" href="./about.html">About</a></li>
                 <li><a class="navoptions" href="./tracker.html">
                     <button>Track your request now!</button>
@@ -21,12 +21,12 @@
         </nav>
     </header>
 
-    <form id="birthCertForm" method="POST" action="process.php">
-        <h1>Request Form</h1>
+    <form id="birthCertForm" method="POST" action="process_birthcert.php">
+        <h1>Birth Certificate Request Form</h1>
         <!-- FIRST SECTION: BASIC PERSONAL DATA OF THE RECIPIENT -->
         <div class="tab">
             <h2>Certificate Holder's Details</h2>
-            <p>This section is for the owner of the certificate.</p>
+            <p>This section is for the owner of the certificate.</p><br>
     
             <!-- LAST NAME FIELD -->
             <label for="lastName">Last Name:</label><br>
@@ -45,12 +45,17 @@
             <input type="text" id="suffix" name="suffix" value="(optional)"><br><br>
     
             <!-- SEX RADIO BUTTON -->
-            <label for="sex">Sex:</label><br>
-            <input type="radio" id="male" name="sex" value="Male" required>
-            <label for="male">Male</label><br>
-            <input type="radio" id="female" name="sex" value="Female" required>
-            <label for="female">Female</label><br><br>
-    
+            <div class="radiobtn">
+                <label for="sex">Sex:</label><br>
+                <label for="male">
+                    <input type="radio" id="male" name="sex" value="Male" required>Male
+                </label><br>
+                
+                <label for="female">
+                    <input type="radio" id="female" name="sex" value="Female" required>Female
+                </label><br><br>
+            </div>
+
             <!-- BIRTHDAY FIELD -->
             <label for="birthday">Birthday:</label>
             <input type="date" id="birthday" name="birthday" required><br><br>
@@ -87,7 +92,7 @@
     
             <!-- MOTHER'S MAIDEN MIDDLE NAME FIELD -->
             <label for="motherMiddleName">Mother's Maiden Middle Name:</label><br>
-            <input type="text" id="motherMiddleName" name="motherMiddleName"><br><br>
+            <input type="text" id="motherMiddleName" name="motherMiddleName" required><br><br>
     
             <!-- PLACE OF BIRTH -->
             <label for="birthPlace">Place of Birth:</label><br>
@@ -102,13 +107,13 @@
             <!-- REQUESTER RELATIONSHIP SELECTION -->
             <label for="reqRelationship">Your relationship with the owner of the certificate:</label><br>
             <select id="reqRelationship" name="reqRelationship" required>
-                <option value="self">Self</option>
-                <option value="father">My Father</option>
-                <option value="mother">My Mother</option>
-                <option value="brother">My Brother</option>
-                <option value="sister">My Sister</option>
-                <option value="son">My Son</option>
-                <option value="daughter">My Daughter</option>
+                <option value="Self">Self</option>
+                <option value="Father">My Father</option>
+                <option value="Mother">My Mother</option>
+                <option value="Brother">My Brother</option>
+                <option value="Sister">My Sister</option>
+                <option value="Son">My Son</option>
+                <option value="Daughter">My Daughter</option>
             </select><br><br>
     
             <!-- REQUESTER LAST NAME FIELD -->
@@ -136,14 +141,14 @@
             <!-- PURPOSE OF REQUEST -->
             <label for="reqPurpose">Purpose of Request:</label><br>
             <select id="reqPurpose" name="reqPurpose" required>
-                <option value="passport">Passport</option>
-                <option value="schoolRequirement">School Requirement</option>
-                <option value="localEmployment">Local Employment</option>
-                <option value="foreignEmployment">Foreign Employment</option>
-                <option value="marriage">Marriage</option>
-                <option value="cbl">Claims/ Benefits/ Loans</option>
-                <option value="lateRegistration">Late Registration</option>
-                <option value="others">Others</option>
+                <option value="Passport">Passport</option>
+                <option value="School Requirement">School Requirement</option>
+                <option value="Local Employment">Local Employment</option>
+                <option value="Foreign Employment">Foreign Employment</option>
+                <option value="Marriage">Marriage</option>
+                <option value="Claims, Benefits, Loans">Claims/ Benefits/ Loans</option>
+                <option value="Late Registration">Late Registration</option>
+                <option value="Others">Others</option>
             </select><br><br>
         </div>
     
