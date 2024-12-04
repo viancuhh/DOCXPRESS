@@ -12,7 +12,9 @@
 /* Style the form */
 form {
     background-color: #ffffff;
-    margin: 0100px auto;
+    border-radius: 20px;
+    box-shadow: 10px 10px 55px var(--color2);
+    margin: 100px auto;
     padding: 40px;
     width: 70%;
     min-width: 300px;
@@ -25,6 +27,14 @@ form {
     font-size: 17px;
     font-family: Raleway;
     border: 1px solid var(--color3);
+  }
+  .radiobtn label{
+    align-items: center;
+    display: inline-flex;
+    margin-right: 10px;
+  }
+  .radiobtn input{
+    margin-right: 10px;
   }
   
   /* Mark input boxes that gets an error on validation: */
@@ -211,4 +221,49 @@ button:hover{
 }
 .elementcontainer > h2 {
   font-size: 60px;
+}
+
+.certsContainer{
+	margin: 50px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.certsContainer p {
+  font-weight: bold;
+}
+
+.certcardtitle {
+	text-align: center;
+	font-size: 25px;
+	padding-top: 10px;
+}
+
+
+.cert{
+	width: 20%;
+  height: 420px;
+	margin: 15px;
+	box-sizing: border-box;
+	float: left;
+	text-align: center;
+	border-radius: 20px;
+	cursor: pointer;
+	padding-top: 10px;
+	box-shadow: 0 14px 28px rgb(59, 83, 90);
+	transition: .4s;
+	background-color: white;
+}
+
+.cert li {
+  font-size: 12px;
+  text-align: left;
+  margin-left: 40px;
+  margin-bottom: 1px;
+}
+
+.cert:hover{
+	box-shadow: 0 6px 12px var(--color2);
 }
