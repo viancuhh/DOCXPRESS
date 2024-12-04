@@ -12,7 +12,7 @@
             <h1 id="navtitle">DocXpress</h1>
             <ul>
                 <li><a class="navoptions" class="active" href="../index.html">Home</a></li>
-                <li><a class="navoptions" href="./contact.html">Contact</a></li>
+                <li><a class="navoptions" href="./admin.html">Admin</a></li>
                 <li><a class="navoptions" href="./about.html">About</a></li>
                 <li><a class="navoptions" href="./tracker.html">
                     <button>Track your request now!</button>
@@ -20,8 +20,8 @@
             </ul>
         </nav>
     </header>
-    <form id="marrCertForm" action="process.php">
-        <h1>Request Form</h1>
+    <form id="marrCertForm" method="POST" action="process_marrcert.php">
+        <h1>Marriage Certificate Request Form</h1>
         <!--
         FIRST SECTION:
         BASIC PERSONAL DATA OF THE RECIPIENT
@@ -29,32 +29,38 @@
         <div class="tab">
             <h2>Certificate Holder's Details</h2>
             <p>This section is for the owner of the certificate.</p>
-            <!--LAST NAME FIELD-->
+
+            <!-- LAST NAME FIELD -->
             <label for="lastName">Last Name:</label><br>
-            <input type="text" id="lastName" required><br><br>
-
-            <!--FIRST NAME FIELD-->
+            <input type="text" id="lastName" name="lastName" required><br><br>
+    
+            <!-- FIRST NAME FIELD -->
             <label for="firstName">First Name:</label><br>
-            <input type="text" id="firstName" required><br><br>
-
-            <!--MIDDLE NAME FIELD-->
+            <input type="text" id="firstName" name="firstName" required><br><br>
+    
+            <!-- MIDDLE NAME FIELD -->
             <label for="middleName">Middle Name:</label><br>
-            <input type="text" id="middleName" value="(optional)"><br><br>
-
-            <!--SUFFIX FIELD-->
+            <input type="text" id="middleName" name="middleName" value="(optional)"><br><br>
+    
+            <!-- SUFFIX FIELD -->
             <label for="suffix">Suffix:</label><br>
-            <input type="text" id="suffix" value="(optional)"><br><br>
+            <input type="text" id="suffix" name="suffix" value="(optional)"><br><br>
+    
+            <!-- SEX RADIO BUTTON -->
+            <div class="radiobtn">
+                <label for="sex">Sex:</label><br>
+                <label for="male">
+                    <input type="radio" id="male" name="sex" value="Male" required>Male
+                </label><br>
+                
+                <label for="female">
+                    <input type="radio" id="female" name="sex" value="Female" required>Female
+                </label><br><br>
+            </div>
 
-            <!--SEX RADIO BUTTON-->
-            <label for="sex">Sex:</label><br>
-            <input type="radio" id="male" name="sex" value="Male" required>
-            <label for="male">Male</label><br>
-            <input type="radio" id="male" name="sex" value="Male">
-            <label for="Female">Female</label><br><br>
-
-            <!--BIRTHDAY FIELD-->
+            <!-- BIRTHDAY FIELD -->
             <label for="birthday">Birthday:</label>
-            <input type="date" id="birthday" name="birthday" required /> 
+            <input type="date" id="birthday" name="birthday" required><br><br>
         </div>
 
         <!--
@@ -64,15 +70,15 @@
         <div class="tab">
             <!--HUSBAND'S LAST NAME FIELD-->
             <label for="husbandLastName">Husband's Last Name:</label><br>
-            <input type="text" id="husbandLastName" required><br><br>
+            <input type="text" id="husbandLastName" name="husbandLastName"><br><br>
 
             <!--HUSBAND'S FIRST NAME FIELD-->
             <label for="husbandFirstName">Husband's First Name:</label><br>
-            <input type="text" id="husbandFirstName" required><br><br>
+            <input type="text" id="husbandFirstName" name="husbandFirstName" required><br><br>
 
             <!--HUSBAND'S MIDDLE NAME FIELD-->
             <label for="husbandrMiddleName">Husband's Middle Name:</label><br>
-            <input type="text" id="husbandMiddleName" required><br><br>
+            <input type="text" id="husbandMiddleName" name="husbandMiddleName" required><br><br>
         </div>
 
         <!--
@@ -82,15 +88,15 @@
         <div class="tab">
             <!--WIFE'S LAST NAME FIELD-->
             <label for="wifeLastName">Wife's Last Name:</label><br>
-            <input type="text" id="wifeLastName" required><br><br>
+            <input type="text" id="wifeLastName"  name="wifeLastName" required><br><br>
 
             <!--WIFE'S FIRST NAME FIELD-->
             <label for="wifeFirstName">Wife's First Name:</label><br>
-            <input type="text" id="wifeFirstName" required><br><br>
+            <input type="text" id="wifeFirstName"  name="wifeFirstName" required><br><br>
 
             <!--WIFE'S MIDDLE NAME FIELD-->
             <label for="wiferMiddleName">Wife's Middle Name:</label><br>
-            <input type="text" id="wifeMiddleName" required><br><br>
+            <input type="text" id="wifeMiddleName"  name="wifeMiddleName" required><br><br>
         </div>
 
         <!--
@@ -106,6 +112,7 @@
             <label for="marriagePlace">Place of Marriage:</label><br>
             <input type="text" id="marriagePlace" name="marriagePlace" required /><br><br>
         </div>
+        
         <!--
         FIFTH SECTION:
         REQUESTER'S DETAILS
@@ -114,30 +121,29 @@
             <h2>Requester's Details</h2>
             <p>This section is for the requester of the certificate.</p>
 
-            <!--REQUESTER RELATIONSHIP SELECTION-->
-            <label for="reqRelationship">Your relationship with the owner of certificate:</label><br>
-            <select id="reqRelationship" required>
-                <option value="self">Self</option>
-                <option value="father">My Father</option>
-                <option value="mother">My Mother</option>
-                <option value="brother">My Brother</option>
-                <option value="sister">My Sister</option>
-                <option value="son">My Son</option>
-                <option value="daughter">My Daughter</option>
+            <!-- REQUESTER RELATIONSHIP SELECTION -->
+            <label for="reqRelationship">Your relationship with the owner of the certificate:</label><br>
+            <select id="reqRelationship" name="reqRelationship" required>
+                <option value="Self">Self</option>
+                <option value="Father">My Father</option>
+                <option value="Mother">My Mother</option>
+                <option value="Brother">My Brother</option>
+                <option value="Sister">My Sister</option>
+                <option value="Son">My Son</option>
+                <option value="Daughter">My Daughter</option>
             </select><br><br>
-
-            <!--REQUESTER LAST NAME FIELD-->
+    
+            <!-- REQUESTER LAST NAME FIELD -->
             <label for="reqLastName">Last Name:</label><br>
-            <input type="text" id="reqLastName" required><br><br>
-
-            <!--REQUESTER FIRST NAME FIELD-->
+            <input type="text" id="reqLastName" name="reqLastName" required><br><br>
+    
+            <!-- REQUESTER FIRST NAME FIELD -->
             <label for="reqFirstName">First Name:</label><br>
-            <input type="text" id="reqFirstName" required><br><br>
-
-            <!--REQUESTER MIDDLE NAME FIELD-->
+            <input type="text" id="reqFirstName" name="reqFirstName" required><br><br>
+    
+            <!-- REQUESTER MIDDLE NAME FIELD -->
             <label for="reqMiddleName">Middle Name:</label><br>
-            <input type="text" id="reqMiddleName" required><br><br>
-
+            <input type="text" id="reqMiddleName" name="reqMiddleName"><br><br>
         </div>
 
         <!--
@@ -148,21 +154,21 @@
             <h2>Marriage Certificate</h2>
             <image src="../assets/draftpricelist.png" height="200px"><br>
 
-            <!--NUMBER OF COPIES-->
+            <!-- NUMBER OF COPIES -->
             <label for="copies">Number of Copies:</label><br>
-            <input type="number" min="1" id="copies" required /><br><br>
-        
-            <!--PURPOSE OF REQUEST (IIBAHIN TO)-->
-            <label for="reqPurpose">Purpose of Request</label>
-            <select id="reqPurpose" required>
-                <option value="passport">Passport</option>
-                <option value="schoolRequirement">School Requirement</option>
-                <option value="localEmployment">Local Employment</option>
-                <option value="foreignEmployment">Foreign Employment</option>
-                <option value="marriage">Marriage</option>
-                <option value="cbl">Claims/ Benefits/ Loans</option>
-                <option value="lateRegistration">Late Registration</option>
-                <option value="others">Others</option>
+            <input type="number" min="1" id="copies" name="copies" required><br><br>
+    
+            <!-- PURPOSE OF REQUEST -->
+            <label for="reqPurpose">Purpose of Request:</label><br>
+            <select id="reqPurpose" name="reqPurpose" required>
+                <option value="Passport">Passport</option>
+                <option value="School Requirement">School Requirement</option>
+                <option value="Local Employment">Local Employment</option>
+                <option value="Foreign Employment">Foreign Employment</option>
+                <option value="Marriage">Marriage</option>
+                <option value="Claims, Benefits, Loans">Claims/ Benefits/ Loans</option>
+                <option value="Late Registration">Late Registration</option>
+                <option value="Others">Others</option>
             </select><br><br>
         </div>
         
@@ -175,6 +181,7 @@
             <div style="float:right;">
               <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
               <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+              <button type="submit" id="submit" style="display: none;">Submit</button>
             </div>
           </div>
           
