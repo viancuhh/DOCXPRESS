@@ -12,7 +12,7 @@
             <h1 id="navtitle">DocXpress</h1>
             <ul>
                 <li><a class="navoptions" class="active" href="./index.html">Home</a></li>
-                <li><a class="navoptions" href="./pages/contact.html">Contact</a></li>
+                <li><a class="navoptions" href="./pages/admin.html">Admin</a></li>
                 <li><a class="navoptions" href="./pages/about.html">About</a></li>
                 <li><a class="navoptions" href="./pages/tracker.html">
                     <button>Track your request now!</button>
@@ -23,25 +23,93 @@
     
     <div class="elementcontainer">
         <h2>Welcome to DocXpress!</h2> 
+        <h1>Get your own copy of Government Certificates here</h3>
     </div>
 
-    <div class="certContainer">
-        <form id="certificateForm" action="">
-            <h2>Government Certificates</h2>
-            <h3>Get your own copy of Government Certificates here</h3>
-            <!--CERTIFICATE TYPE-->
-            <label for="certificateType">Choose Certificate Type:</label><br>
-            <select id="certificateType" required>
-                <option value="birth">Birth Certificate</option>
-                <option value="death">Death Certificate</option>
-                <option value="marriage">Marriage Certificate</option>
-                <option value="cenomar">CENOMAR</option>
-             </select><br><br>
-             <button id="orderNowBtn" type="button">Order Now</button>
-             <a href="./pages/birthcertificate"><button>temporary next button</button></a>
-        </form>
-    
-</div>
+    <div class="certsContainer">
+        <div class="cert">
+            <h3 class="certcardtitle">Birth Certificate</h3>
+            <p>Information needed:<p>
+                <ul>
+                    <li>Your full name</li>
+                    <li>Sex</li>
+                    <li>Date of birth</li>
+                    <li>Place of birth</li>
+                    <li>Father's name</li>
+                    <li>Mother's name</li>
+                    <li>Requester's details</li>
+                    <li>Relationship with the certificate owner</li>
+                    <li>Purpose</li>
+                    <li>Number of copies</li>
+                    <li>Phone Number</li>
+                    <li>Email</li>
+                    <li>Delivery Address</li>
+                </ul><br><br>
+                <a href="./pages/birthcertificate.html"><button type="submit" id="BCbutton">Request Now!</button></a>
+        </div>
+        <div class="cert">
+            <h3 class="certcardtitle">Death Certificate</h3>
+            <p>Information needed:<p>
+                <ul>
+                    <li>Name of deceased</li>
+                    <li>Sex</li>
+                    <li>Date of birth</li>
+                    <li>Date of death</li>
+                    <li>Place of death</li>
+                    <li>Requester's details</li>
+                    <li>Relationship with the certificate owner</li>
+                    <li>Purpose</li>
+                    <li>Number of copies</li>
+                    <li>Phone Number</li>
+                    <li>Email</li>
+                    <li>Delivery Address</li>
+                </ul><br><br><br>
+                <a href="./pages/deathcertificate.html"><button type="submit" id="DCbutton">Request Now!</button></a>
+        </div>
+        <div class="cert">
+            <h3 class="certcardtitle">Marriage Certificate</h3>
+            <p>Information needed:<p>
+                <ul>
+                    <li>Your full name</li>
+                    <li>Sex</li>
+                    <li>Date of birth</li>
+                    <li>Husband's name</li>
+                    <li>Wife's name</li>
+                    <li>Date of marriage</li>
+                    <li>Place of marriage</li>
+                    <li>Requester's details</li>
+                    <li>Relationship with the certificate owner</li>
+                    <li>Purpose</li>
+                    <li>Number of copies</li>
+                    <li>Phone Number</li>
+                    <li>Email</li>
+                    <li>Delivery Address</li>
+                </ul><br><br>
+            <a href="./pages/marriagecertificate.html"><button type="submit" id="MCbutton">Request Now!</button></a>
+        </div>
+        <div class="cert">
+            <h3 class="certcardtitle">CENOMAR</h3>
+            <p>Information needed:<p>
+                <ul>
+                    <li>Your full name</li>
+                    <li>Sex</li>
+                    <li>Date of birth</li>
+                    <li>Place of birth</li>
+                    <li>Father's name</li>
+                    <li>Mother's name</li>
+                    <li>Requester's details</li>
+                    <li>Relationship with the certificate owner</li>
+                    <li>Purpose</li>
+                    <li>Number of copies</li>
+                    <li>Phone Number</li>
+                    <li>Email</li>
+                    <li>Delivery Address</li>
+                </ul><br><br>
+                <br>
+                <a href="./pages/cenomar.html"><button type="submit" id="NMCbutton">Request Now!</button></a>
+        </div>
+    </div>
+
     <footer class="footer">
         <div class="footercontainer">
             <div class="footerrow">
