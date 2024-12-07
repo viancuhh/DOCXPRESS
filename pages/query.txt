@@ -77,3 +77,8 @@ CREATE TABLE requests (
     copies INT,
     price INT
 );
+CREATE TABLE login (
+    id INT PRIMARY KEY, 
+    user VARCHAR(100),
+    password VARCHAR(100)
+);
