@@ -82,3 +82,8 @@ CREATE TABLE login (
     user VARCHAR(100),
     password VARCHAR(100)
 );
+CREATE TABLE certificates (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    cert_type VARCHAR(50),
+    price INT
+);
